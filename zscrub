@@ -8,12 +8,12 @@ zgetint() {
 	echo ${val:-$default}
 }
 
-interval=$(zgetint "$pool" se.nym.scrub:interval 30)
+interval=$(zgetint "$pool" se.nym.zscrub:interval 30)
 interval=$((86400 * interval))
 
 while true ; do
         now=$(date +%s)
-        last=$(zgetint "$pool" se.nym.scrub:latest 0)
+        last=$(zgetint "$pool" se.nym.zscrub:latest 0)
         next=$((interval + last))
 
         if ((now > next)) ; then
