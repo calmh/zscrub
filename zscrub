@@ -18,7 +18,7 @@ while true ; do
 
         if ((now > next)) ; then
                 zpool scrub "$pool"
-                zfs set se.nym.scrub:latest="$now" "$pool"
+                zfs set se.nym.zscrub:latest="$now" "$pool"
         fi
 
         sleep 60
